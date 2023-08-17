@@ -1,0 +1,47 @@
+
+<div class="banner">
+</div>
+<div class="d-flex justify-content-between">
+  <div class="d-flex flex-column">
+    <div class="rounded p-2 m-3" style="background-color: lightgray;">
+      <h1><%= @flat.name %></h1>
+      <p><%= @flat.address %></p>
+    </div>
+    <div class="rounded p-2 m-3" style="background-color: lightgray;">
+      <h2>A bit about this flat :</h2>
+      <p><%= @flat.description %></p>
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1HWBVpUGX4qgka6hHRR5WbQvwvHzksfk&ehbc=2E312F" width="600" height="450"></iframe>
+    </div>
+  </div>
+  <div>
+    <div class="rounded p-2 m-3 " style="background-color: lightgray;">
+    <h2>Book your vacation</h2>
+    <form action="" class="">
+      <div class="input-group mb-2">
+        <label for="start-date" class="input-group-text">From:</label>
+        <input type="text" id="start-date" class="form-control">
+      </div>
+      <div class="input-group mb-2">
+        <label for="start-date" class="input-group-text">To:</label>
+        <input type="text" id="start-date" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Book</button>
+    </form>
+    </div>
+    <div class="rounded p-2 m-3 " style="background-color: lightgray;">
+      <h2>Details</h2>
+      <div class="">
+        <p><i class="fa-solid fa-people-group"></i> <%= @flat.number_of_guests %></p>
+        <p><%= @flat.price_per_night %><i class="fa-solid fa-euro-sign"></i>/night</p>
+      </div>
+    </div>
+    <div class="rounded p-2 m-3 d-flex justify-content-between align-items-center" style="background-color: lightgray;">
+      <span>Share</span>
+      <div class="d-flex">
+        <i class="fa-brands fa-square-twitter me-2"></i>
+        <i class="fa-brands fa-square-twitter me-2"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+      </div>
+    </div>
+  </div>
+</div>

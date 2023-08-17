@@ -1,0 +1,35 @@
+<div class="mx-auto mt-3">
+  <h1 class="mb-3">All of our flats</h1>
+  <div class="row">
+  <% @flats.each do |flat| %>
+    <div class="col-12 col-lg-6 col-xl-4">
+      <div class="card mb-3 shadow" style="width: 24rem;">
+        <div class="position-relative">
+          <img src="https://images.unsplash.com/photo-1556784344-ad913c73cfc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2369&q=80" class="card-img-top" alt="">
+          <div class="position-absolute top-0 start-0 bg-white rounded m-1 p-2">
+          <%= link_to (edit_flat_path(flat)), class: "stretched-link" do%>
+            <i class="fa-solid fa-pen-to-square postion-absolute"></i>
+            <% end %>
+          </div>
+          <div class="position-absolute top-0 end-0 bg-white text-danger rounded m-1 p-2">
+            <%= link_to (flat_path(flat)), class: "stretched-link", data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash-can text-danger postion-absolute"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title"><%= flat.name %></h3>
+          <p class="card-text"><%= flat.address %></p>
+          <div class="d-flex justify-content-between">
+            <p><i class="fa-solid fa-people-group"></i> <%= flat.number_of_guests %> </p>
+            <p class="text-success"><%= flat.price_per_night %> <i class="fa-solid fa-euro-sign"></i></p>
+          </div>
+          <div class="text-center border-top pt-3">
+            <%= link_to "Discover more", flat_path(flat), class: "text-decoration-none btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
